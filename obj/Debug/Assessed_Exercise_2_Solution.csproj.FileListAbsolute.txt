@@ -1,0 +1,9 @@
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\bin\Debug\Assessed_Exercise_2_Solution.exe.config
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\bin\Debug\Assessed_Exercise_2_Solution.exe
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\bin\Debug\Assessed_Exercise_2_Solution.pdb
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.csproj.AssemblyReference.cache
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.Properties.Resources.resources
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.csproj.GenerateResource.cache
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.csproj.CoreCompileInputs.cache
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.exe
+C:\Users\USER\OneDrive - MMU\Source\repos\Assessed_Exercise_2_Solution\obj\Debug\Assessed_Exercise_2_Solution.pdb
