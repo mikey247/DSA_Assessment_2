@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,57 +23,47 @@ namespace Assessed_Exercise_2_Solution
             this.root = root;
         }
 
-        public void InOrder()
-        {
-            inOrder(root);
+        public String[] InOrder(){
+            List<String> result = new List<String>();
+            inOrder(root, result);
+            return result.ToArray();    
         }
 
-        public void inOrder(Node tree){
-            {
-                if (tree != null)  //not empty
-                {
-                    inOrder(tree.left);
-                    //Console.Write(tree.Data + ",");
-                    tree.Data.getInformation();
-                    inOrder(tree.right);
-                }
+        public void inOrder(Node tree, List<String> result){
+            if (tree != null){
+                inOrder(tree.left, result);
+                result.Add(tree.Data.getInformation());
+                //Console.Write(tree.Data + ",");
+                inOrder(tree.right, result);
             }
         }
 
-        public void PreOrder()
-        {
-            preOrder(root);
+        public String[] PreOrder(){
+            List<String> result = new List<String>();
+            preOrder(root, result);
+            return result.ToArray();
         }
 
-        public void preOrder(Node tree)
-        {
-            {
-                if (tree != null)  //not empty
-                {
-                    //Console.Write(tree.Data + ",");
-                    tree.Data.getInformation();
-                    preOrder(tree.left);
-                    preOrder(tree.right);
+        public void preOrder(Node tree, List<String> result){
+                if (tree != null){
+                    result.Add(tree.Data.getInformation());
+                    preOrder(tree.left, result);
+                    preOrder(tree.right, result);
                 }
-            }
         }
 
-        public void PostOrder()
-        {
-            postOrder(root);
+        public String[] PostOrder(){
+            List<String> result = new List<String>();
+            postOrder(root,result);
+            return result.ToArray();
         }
 
-        public void postOrder(Node tree)
-        {
-            {
-                if (tree != null)  //not empty
-                {
-                    postOrder(tree.left);
-                    postOrder(tree.right);
-                    //Console.Write(tree.Data + ",");
-                    tree.Data.getInformation();
+        public void postOrder(Node tree, List<String> result){
+                if (tree != null) {
+                    postOrder(tree.left, result);
+                    postOrder(tree.right, result);
+                    result.Add(tree.Data.getInformation());
                 }
-            }
         }
 
         public int Count(){
@@ -87,7 +78,9 @@ namespace Assessed_Exercise_2_Solution
 
 
         private void insertItem(Customer customer, ref Node node){
-            if (customer.name.CompareTo(node.Data.name) <= 0){
+            if (node == null){
+                node = new Node(customer);
+            } else if (customer.Name.CompareTo(node.Data.Name) <= 0){
                 // If the new customer's name is less than or equal to the current node's customer's name, 
                 // go to the left subtree
                 if (node.left == null){
@@ -108,6 +101,23 @@ namespace Assessed_Exercise_2_Solution
 
         public void InsertItem(Customer item){ 
             insertItem(item, ref root);
+        }
+
+        public Customer FindItem(string name){
+            return findItem(name, root);
+        }
+
+
+        private Customer findItem(string name, Node tree) { 
+            if (tree == null){
+                return null;
+            } else if (name.CompareTo(tree.Data.Name) == 0){
+                return tree.Data;
+            } else if (name.CompareTo(tree.Data.Name) < 0){
+                return findItem(name, tree.left);
+            } else{
+                return findItem(name, tree.right);
+            }
         }
 
 
